@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NAM YUL | Actor Portfolio</title>
+    <meta
+      name="description"
+      content="배우 남율의 작품, 사진, 연락처를 담은 공식 포트폴리오 웹사이트"
+    />
+    <meta property="og:title" content="NAM YUL | Actor Portfolio" />
+    <meta
+      property="og:description"
+      content="Less Interface, More Actor. 배우 남율의 작품 중심 포트폴리오."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#111111" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="site-mark" href="#landing" aria-label="Go to landing">NAM YUL</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#act">ACT</a>
+          <a href="#photos">PHOTOS</a>
+          <button type="button" class="nav-contact-trigger" data-open-contact>CONTACT</button>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" id="landing" aria-label="Landing hero">
+          <div class="hero-media">
+            <video
+              class="hero-video"
+              autoplay
+              muted
+              loop
+              playsinline
+              poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Crect width='1600' height='900' fill='%23131313'/%3E%3Ccircle cx='1280' cy='140' r='320' fill='%233e3426' fill-opacity='0.48'/%3E%3Ccircle cx='300' cy='760' r='360' fill='%23242326' fill-opacity='0.64'/%3E%3Ctext x='80' y='810' fill='%23f3efe7' font-family='Georgia, serif' font-size='40' opacity='0.55'%3EReplace with hero reel at /site/media/hero.mp4%3C/text%3E%3C/svg%3E"
+            >
+              <source src="/media/hero.mp4" type="video/mp4" />
+            </video>
+            <div class="hero-overlay"></div>
+          </div>
+          <div class="hero-copy">
+            <p class="eyebrow">Actor Portfolio</p>
+            <h1>NAM YUL</h1>
+            <p class="hero-note">
+              Quiet frames, deliberate pacing, and work that lets performance lead.
+            </p>
+          </div>
+          <a class="scroll-cue" href="#act" aria-label="Scroll to acting work">Scroll</a>
+        </section>
+
+        <section class="section act-section" id="act" aria-labelledby="act-title">
+          <div class="section-heading">
+            <p class="section-kicker">Featured Work</p>
+            <h2 id="act-title">ACT</h2>
+          </div>
+          <div class="act-list" id="act-list"></div>
+        </section>
+
+        <section class="section photos-section" id="photos" aria-labelledby="photos-title">
+          <div class="section-heading">
+            <p class="section-kicker">Profile, stills, atmosphere</p>
+            <h2 id="photos-title">PHOTOS</h2>
+          </div>
+          <div class="photo-grid" id="photo-grid"></div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>© 2026 NAM YUL</p>
+        <div class="footer-links">
+          <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">YouTube</a>
+          <button type="button" data-open-contact>Email</button>
+        </div>
+      </footer>
+    </div>
+
+    <dialog class="contact-modal" id="contact-modal" aria-labelledby="contact-title">
+      <form class="contact-card" id="contact-form" method="dialog" novalidate>
+        <div class="contact-header">
+          <div>
+            <p class="section-kicker">Get in touch</p>
+            <h2 id="contact-title">CONTACT</h2>
+          </div>
+          <button type="button" class="close-button" aria-label="Close contact modal" data-close-contact>
+            ×
+          </button>
+        </div>
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" autocomplete="name" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" autocomplete="email" required />
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+        <p class="form-status" id="form-status" aria-live="polite"></p>
+        <div class="modal-actions">
+          <button type="button" class="ghost-button" data-close-contact>Cancel</button>
+          <button type="submit" class="primary-button">Send</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog class="lightbox" id="lightbox" aria-label="Photo lightbox">
+      <div class="lightbox-shell">
+        <button type="button" class="lightbox-close" aria-label="Close photo viewer">×</button>
+        <button type="button" class="lightbox-nav prev" aria-label="Previous photo">‹</button>
+        <figure class="lightbox-figure">
+          <img id="lightbox-image" alt="" />
+          <figcaption id="lightbox-caption"></figcaption>
+        </figure>
+        <button type="button" class="lightbox-nav next" aria-label="Next photo">›</button>
+      </div>
+    </dialog>
+
+    <script src="/app.js" defer></script>
+  </body>
+  </html>

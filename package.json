@@ -1,0 +1,23 @@
+{
+  "name": "0626_portfolio",
+  "version": "1.0.0",
+  "description": "NAM YUL actor portfolio prototype",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [
+    "portfolio",
+    "actor",
+    "static-site"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^16.2.10",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "resend": "^6.17.1"
+  }
+}
