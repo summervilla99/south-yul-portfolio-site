@@ -19,9 +19,6 @@ export function PersonalInfoCard({ profileSummary }) {
           aria-label={collapsed ? "Expand personal info" : "Collapse personal info"}
           onClick={() => setCollapsed((current) => !current)}
         >
-          <span className="hero-profile-toggle-label">
-            {collapsed ? "Open" : "Hide"}
-          </span>
           <span className="hero-profile-toggle-icon" aria-hidden="true">
             {collapsed ? "+" : "−"}
           </span>

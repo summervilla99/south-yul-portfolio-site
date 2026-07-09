@@ -260,9 +260,10 @@ video {
 .hero-profile-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
+  justify-content: center;
+  min-width: 2rem;
   min-height: 2rem;
-  padding: 0.35rem 0.4rem 0.35rem 0.8rem;
+  padding: 0.35rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.04);
@@ -275,13 +276,6 @@ video {
   background: rgba(200, 169, 125, 0.12);
   border-color: rgba(200, 169, 125, 0.28);
   transform: translateY(-1px);
-}
-
-.hero-profile-toggle-label {
-  font-size: 0.68rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(244, 239, 230, 0.72);
 }
 
 .hero-profile-toggle-icon {
@@ -1201,7 +1195,7 @@ video {
   }
 
   .hero-profile-toggle {
-    padding: 0.32rem 0.36rem 0.32rem 0.72rem;
+    padding: 0.32rem;
   }
 
   .hero-profile-card.is-collapsed {
