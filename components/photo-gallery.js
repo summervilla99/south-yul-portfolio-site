@@ -16,8 +16,6 @@ export function PhotoGallery({ sections }) {
     const openers = document.querySelectorAll("[data-open-contact]");
     const closers = document.querySelectorAll("[data-close-contact]");
     const modal = document.getElementById("contact-modal");
-    const form = document.getElementById("contact-form");
-    const status = document.getElementById("form-status");
 
     const openModal = () => {
       document.body.classList.add("modal-open");
@@ -29,55 +27,12 @@ export function PhotoGallery({ sections }) {
       document.body.classList.remove("modal-open");
     };
 
-    const submitHandler = async (event) => {
-      event.preventDefault();
-
-      const formData = new FormData(form);
-      const payload = Object.fromEntries(formData.entries());
-
-      if (!payload.name || !payload.email || !payload.message) {
-        status.textContent = "모든 항목을 입력해주세요.";
-        status.className = "form-status is-error";
-        return;
-      }
-
-      status.textContent = "Sending...";
-      status.className = "form-status";
-
-      try {
-        const response = await fetch("/api/contact", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        });
-        const data = await response.json();
-
-        if (!response.ok) {
-          throw new Error(data.error || "Request failed");
-        }
-
-        status.textContent = data.mock
-          ? "Thank you. 메일 전송 환경변수가 아직 없어 현재는 목업 응답으로 동작했습니다."
-          : "Thank you. 메일이 성공적으로 전송되었습니다.";
-        status.className = "form-status is-success";
-        form.reset();
-      } catch (error) {
-        status.textContent =
-          error instanceof Error
-            ? error.message
-            : "메일 전송에 실패했습니다. 잠시 후 다시 시도해주세요.";
-        status.className = "form-status is-error";
-      }
-    };
-
     openers.forEach((button) => button.addEventListener("click", openModal));
     closers.forEach((button) => button.addEventListener("click", closeModal));
-    form?.addEventListener("submit", submitHandler);
 
     return () => {
       openers.forEach((button) => button.removeEventListener("click", openModal));
       closers.forEach((button) => button.removeEventListener("click", closeModal));
-      form?.removeEventListener("submit", submitHandler);
     };
   }, []);
 

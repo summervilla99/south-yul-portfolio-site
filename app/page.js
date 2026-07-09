@@ -1,28 +1,10 @@
 import {
-  ContactModal,
-  Footer,
   getPhotoSectionsAndHero,
-  Header,
-  HeroSection,
-  PhotosSection,
-  WorkSection,
 } from "../components/portfolio";
+import { PortfolioPageClient } from "../components/portfolio-page-client";
 
 export default async function HomePage() {
   const { sections } = await getPhotoSectionsAndHero();
 
-  return (
-    <>
-      <div className="page-shell">
-        <Header />
-        <main>
-          <HeroSection />
-          <WorkSection />
-          <PhotosSection sections={sections} />
-        </main>
-        <Footer />
-      </div>
-      <ContactModal />
-    </>
-  );
+  return <PortfolioPageClient sections={sections} />;
 }

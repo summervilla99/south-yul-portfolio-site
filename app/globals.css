@@ -114,6 +114,28 @@ video {
   gap: 1.15rem;
 }
 
+.locale-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.18rem 0 0.18rem 0.35rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.locale-switch span {
+  color: rgba(244, 239, 230, 0.36);
+  font-size: 0.72rem;
+}
+
+.locale-switch button {
+  opacity: 0.52;
+}
+
+.locale-switch button.is-active {
+  opacity: 1;
+  color: var(--accent);
+}
+
 .site-nav a,
 .site-nav button,
 .footer-links a,
@@ -400,6 +422,7 @@ video {
   font-size: 0.96rem;
   line-height: 1.76;
   color: rgba(244, 239, 230, 0.84);
+  white-space: pre-line;
 }
 
 .credit-groups {
@@ -753,6 +776,49 @@ video {
   gap: 0.45rem;
 }
 
+.contact-copy {
+  margin: 0;
+  color: rgba(244, 239, 230, 0.82);
+  font-size: 0.94rem;
+  line-height: 1.8;
+}
+
+.contact-actions-grid {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.contact-channel {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem 1.05rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.035);
+  text-decoration: none;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.contact-channel:hover {
+  transform: translateY(-1px);
+  border-color: rgba(200, 169, 125, 0.28);
+  background: rgba(200, 169, 125, 0.06);
+}
+
+.contact-channel span {
+  color: var(--muted);
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.contact-channel strong {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  word-break: break-word;
+}
+
 .contact-card span {
   font-size: 0.78rem;
   color: var(--muted);
@@ -960,6 +1026,11 @@ video {
     justify-content: flex-end;
     min-width: 0;
     gap: 0.6rem;
+  }
+
+  .locale-switch {
+    gap: 0.3rem;
+    padding-left: 0.3rem;
   }
 
   .site-mark,
@@ -1173,6 +1244,10 @@ video {
 @media (max-width: 479px) {
   .site-nav {
     gap: 0.45rem;
+  }
+
+  .locale-switch {
+    padding-left: 0.22rem;
   }
 
   .site-mark,
