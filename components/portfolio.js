@@ -6,6 +6,7 @@ import {
 } from "../lib/portfolio-data";
 import { getResolvedPhotoSections } from "../lib/cloudinary";
 import { placeholderSvg } from "../lib/placeholder-svg";
+import { PersonalInfoCard } from "./personal-info-card";
 import { WorkSectionClient } from "./work-section-client";
 
 export function Header() {
@@ -49,41 +50,7 @@ export function HeroSection() {
       <div className="hero-editorial-layout">
         <div className="hero-copy" aria-hidden="true" />
 
-        <aside className="hero-profile-card" aria-label="Personal summary">
-          <p className="hero-card-kicker">Personal Info</p>
-          <dl className="hero-profile-grid">
-            <div>
-              <dt>Age</dt>
-              <dd>
-                {profileSummary.age} ({profileSummary.birth})
-              </dd>
-            </div>
-            <div>
-              <dt>Physical</dt>
-              <dd>
-                {profileSummary.height} | {profileSummary.weight}
-              </dd>
-            </div>
-            <div>
-              <dt>Talents</dt>
-              <dd>
-                {profileSummary.talents.slice(0, 3).join(", ")},
-                <br />
-                {profileSummary.talents.slice(3).join(", ")}
-              </dd>
-            </div>
-            <div>
-              <dt>Hobbies</dt>
-              <dd>{profileSummary.hobbies.join(", ")}</dd>
-            </div>
-            <div>
-              <dt>Contact</dt>
-              <dd>
-                <a href={`mailto:${profileSummary.email}`}>{profileSummary.email}</a>
-              </dd>
-            </div>
-          </dl>
-        </aside>
+        <PersonalInfoCard profileSummary={profileSummary} />
       </div>
     </section>
   );
