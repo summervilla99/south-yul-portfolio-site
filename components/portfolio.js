@@ -117,7 +117,7 @@ export function PhotosSection({ sections }) {
   return (
     <section className="section photos-section" id="photos" aria-labelledby="photos-title">
       <div className="section-heading">
-        <p className="section-kicker">Profile, stills, atmosphere</p>
+        <p className="section-kicker">Profile, snaps, daily</p>
         <h2 id="photos-title">PHOTOS</h2>
       </div>
       <PhotoGallery sections={sections} />
