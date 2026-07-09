@@ -59,7 +59,7 @@ export function WorkSectionClient({ sections }) {
 
     cards.forEach((card) => observer.observe(card));
     return () => observer.disconnect();
-  }, []);
+  }, [sections]);
 
   const activeWorkVisual =
     currentWorkImageIndex === null ? null : workVisuals[currentWorkImageIndex];
