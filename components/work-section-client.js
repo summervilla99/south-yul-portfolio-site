@@ -115,6 +115,7 @@ export function WorkSectionClient({ sections }) {
                       aria-label={`Open image gallery for ${entry.title}`}
                     >
                       <img
+                        className={entry.thumbnailFit === "contain" ? "act-visual-image-contain" : ""}
                         src={entry.thumbnailSources[previewIndices[entry.title] || 0]}
                         alt={`${entry.title} thumbnail`}
                         loading="lazy"

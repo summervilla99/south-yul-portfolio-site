@@ -530,6 +530,11 @@ video {
   transition: opacity 0.3s ease;
 }
 
+.act-visual img.act-visual-image-contain {
+  object-fit: contain;
+  background: #000;
+}
+
 .act-card:hover .act-visual img {
   opacity: 0.92;
 }
