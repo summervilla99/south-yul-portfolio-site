@@ -532,7 +532,27 @@ video {
 
 .act-visual img.act-visual-image-contain {
   object-fit: contain;
-  background: #000;
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+.act-visual-backdrop {
+  position: absolute;
+  z-index: 0;
+  inset: -1.5rem;
+  background-position: center;
+  background-size: cover;
+  filter: blur(1.2rem);
+  opacity: 0.72;
+  transform: scale(1.08);
+}
+
+.act-visual-backdrop::after {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 8, 9, 0.18);
+  content: "";
 }
 
 .act-card:hover .act-visual img {
@@ -541,6 +561,7 @@ video {
 
 .act-visual-controls {
   position: absolute;
+  z-index: 2;
   inset: 0;
   display: flex;
   align-items: center;

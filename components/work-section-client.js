@@ -114,6 +114,15 @@ export function WorkSectionClient({ sections }) {
                       tabIndex={0}
                       aria-label={`Open image gallery for ${entry.title}`}
                     >
+                      {entry.thumbnailFit === "contain" ? (
+                        <span
+                          className="act-visual-backdrop"
+                          aria-hidden="true"
+                          style={{
+                            backgroundImage: `url(${entry.thumbnailSources[previewIndices[entry.title] || 0]})`,
+                          }}
+                        />
+                      ) : null}
                       <img
                         className={entry.thumbnailFit === "contain" ? "act-visual-image-contain" : ""}
                         src={entry.thumbnailSources[previewIndices[entry.title] || 0]}
